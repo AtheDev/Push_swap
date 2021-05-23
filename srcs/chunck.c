@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:08:09 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 12:03:39 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 15:27:16 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@ void	value_chunck(int *tab, int *tmp, int size_stack, int *nb_int_chunck)
 	int		count;
 	int		nb;
 
-	if (size_stack > 101)
+	nb = 20;
+	if (size_stack > 400)
+		nb = size_stack / 11;
+	else if (size_stack > 300)
 		nb = 40;
-	else
-		nb = 20;
+	else if (size_stack > 200)
+		nb = 33;
+	else if (size_stack > 100)
+		nb = 28;
 	i = 0;
 	count = 0;
 	while (i < size_stack)

@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:18:06 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 11:57:12 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 12:29:02 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,26 @@ int	search_value_just_below(int *value_beside, int *pos, int value, t_stack *b)
 	if (ret == 1)
 		return (search_value_just_above(value_beside, pos, value, b));
 	return (ret);
+}
+
+void	search_pos_value(int *pos, int value, t_stack *l)
+{
+	t_list	*lst;
+	int		num;
+	int		count;
+
+	lst = l->stack;
+	count = 0;
+	while (l->stack != NULL)
+	{
+		num = ft_atoi(l->stack->content);
+		if (num == value)
+		{
+			*pos = count + 1;
+			break ;
+		}
+		count++;
+		l->stack = l->stack->next;
+	}
+	l->stack = lst;
 }

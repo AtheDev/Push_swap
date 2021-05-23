@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:28:58 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 12:02:53 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 16:00:04 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,4 @@ void	process_push_stack_b(t_pos *pos, t_struct *ps, int res)
 	push(&ps->b, &ps->a, 'b');
 	if (res == 1)
 		rotate(&ps->b, 'b');
-}
-
-void	push_stack_up(int value, t_stack *l, char c)
-{
-	t_pos	pos;
-
-	put_in_order(l, value, 'b');
 }

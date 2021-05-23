@@ -6,17 +6,15 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 21:43:27 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/22 21:45:05 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 13:42:10 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*my_strjoin(char *s1, char *s2)
+char	*my_strjoin(char *s1, char *s2, int i, int j)
 {
 	char	*str;
-	int		i;
-	int		j;
 
 	if (!s1)
 	{
@@ -26,7 +24,6 @@ char	*my_strjoin(char *s1, char *s2)
 		s1[0] = '\0';
 	}
 	i = ft_strlen(s1);
-	j = ft_strlen(s2);
 	str = malloc(sizeof(char) * (i + j + 2));
 	if (str == NULL)
 	{

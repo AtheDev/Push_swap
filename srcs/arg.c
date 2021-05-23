@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:59:54 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 11:56:26 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 15:35:18 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ void	new_tab_arg(t_stack *l, int size, t_arg *tmp)
 	tab[i] = NULL;
 	l->stack = lst;
 	*tmp = init_arg(tab, 0);
+	free(tab);
 }
