@@ -6,11 +6,17 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:18:06 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/18 19:18:44 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 11:57:12 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	save_value(int *value_beside, int *pos, int num, int count)
+{
+	*value_beside = num;
+	*pos = count;
+}
 
 int	search_value_just_above(int *value_beside, int *pos, int value, t_stack *b)
 {
@@ -27,16 +33,8 @@ int	search_value_just_above(int *value_beside, int *pos, int value, t_stack *b)
 		num = ft_atoi(b->stack->content);
 		if (value < num)
 		{
-			if (ret == 1) // || num > *value_just_below)
-			{
-				*value_beside = num;
-				*pos = count;
-			}
-			if (ret == 0 && num < *value_beside)
-			{
-				*value_beside = num;
-				*pos = count;
-			}
+			if (ret == 1 || (ret == 0 && num < *value_beside))
+				save_value(value_beside, pos, num, count);
 			ret = 0;
 		}
 		count++;
@@ -61,16 +59,8 @@ int	search_value_just_below(int *value_beside, int *pos, int value, t_stack *b)
 		num = ft_atoi(b->stack->content);
 		if (value > num)
 		{
-			if (ret == 1) // || num > *value_just_below)
-			{
-				*value_beside = num;
-				*pos = count;
-			}
-			if (ret == 0 && num > *value_beside)
-			{
-				*value_beside = num;
-				*pos = count;
-			}
+			if (ret == 1 || (ret == 0 && num > *value_beside))
+				save_value(value_beside, pos, num, count);
 			ret = 0;
 		}
 		count++;

@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 19:55:59 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/18 13:54:09 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/22 17:26:38 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,19 @@ void	print_struct(t_stack *a, t_stack *b)
 	printf("\033[31m***** FIN *****\033[37m\n\n");
 	printf("\033[31m***** PRINT_B *****\033[37m\n");
 	print_lst(b->stack);
+	printf("\033[31m***** FIN *****\033[37m\n\n");
+}
+
+void	print_new_tab_arg(char **tab)
+{
+	int	i;
+
+	i = 0;
+	printf("\033[31m***** PRINT NEW TAB *****\033[37m\n");
+	while (tab[i] != NULL)
+	{
+		printf("tab[%d] = %s\n", i, tab[i]);
+		i++;
+	}
 	printf("\033[31m***** FIN *****\033[37m\n\n");
 }

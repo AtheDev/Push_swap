@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 22:31:52 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/17 18:50:58 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/19 18:56:50 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ void	rotate(t_stack *l, char c)
 	}
 	l->stack->next = NULL;
 	l->stack = tmp;
-	printf("r%c\n", c);
+	if (c != ' ')
+		printf("r%c\n", c);
 }
 
 void	rotate_rotate(t_struct *ps)
 {
-	rotate(&ps->a, 'a');
-	rotate(&ps->b, 'b');
+	rotate(&ps->a, ' ');
+	rotate(&ps->b, ' ');
+	printf("rr\n");
 }

@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:30:40 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/17 18:52:04 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/19 18:59:18 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ void	reverse_rotate(t_stack *l, char c)
 	l->stack->next = NULL;
 	lst->next = tmp;
 	l->stack = lst;
-	printf("rr%c\n", c);
+	if (c != ' ')
+		printf("rr%c\n", c);
 }
 
 void	reverse_rotate_rotate(t_struct *ps)
 {
-	reverse_rotate(&ps->a, 'a');
-	reverse_rotate(&ps->b, 'b');
+	reverse_rotate(&ps->a, ' ');
+	reverse_rotate(&ps->b, ' ');
+	printf("rrr\n");
 }

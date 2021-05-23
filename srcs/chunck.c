@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:08:09 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/18 19:16:46 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 12:03:39 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	value_chunck(int *tab, int *tmp, int size_stack, int *nb_int_chunck)
 	int		count;
 	int		nb;
 
-	if (size_stack > 100)
+	if (size_stack > 101)
 		nb = 40;
 	else
 		nb = 20;
@@ -62,7 +62,7 @@ void	sort_with_chunck(int min, int max, t_struct *ps, int nb_int_chunck)
 		pos.min = min;
 		pos.max = max;
 		search_pos(&pos, &ps->a, 0);
-		process_push_stack_b(&pos, ps);
+		process_push_stack_b(&pos, ps, 0);
 		nb_int_chunck--;
 	}
 }

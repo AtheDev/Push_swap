@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:21:35 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/18 19:22:50 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 12:01:56 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	process_sort(t_struct *ps, t_arg arg, int div)
 	chunck.tab = get_chunck
 		(&ps->a, arg, chunck.nb_chunck, &chunck.nb_int_chunck);
 	loop_sort(ps, chunck, arg);
-	push_max_in_stack_b(arg.arg_max, ps);
+	push_stack_up(arg.arg_max, &ps->b, 'b');
 	while (ps->b.size_stack > 0)
 		push(&ps->a, &ps->b, 'a');
 	free(chunck.tab);

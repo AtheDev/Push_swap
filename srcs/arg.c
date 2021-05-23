@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:59:54 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/17 21:15:21 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 11:56:26 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,15 @@ t_arg	init_arg(char **argv, int i)
 void	new_tab_arg(t_stack *l, int size, t_arg *tmp)
 {
 	t_list	*lst;
-	char	*tab[size];
+	char	**tab;
 	int		i;
 
+	tab = malloc(sizeof(char *) * (size + 1));
+	if (tab == NULL)
+		return ;
 	lst = l->stack;
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 	{
 		tab[i] = l->stack->content;
 		l->stack = l->stack->next;

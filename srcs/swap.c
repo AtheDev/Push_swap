@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 20:02:47 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/17 21:16:17 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/19 18:59:55 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	swap(t_stack *l, char c)
 	l->stack = l->stack->next;
 	l->stack->next = tmp;
 	l->stack->next->next = tmp_next;
-	printf("s%c\n", c);
+	if (c != ' ')
+		printf("s%c\n", c);
 }
 
 void	swap_swap(t_struct *ps)
 {
-	swap(&ps->a, 'a');
-	swap(&ps->b, 'b');
+	swap(&ps->a, ' ');
+	swap(&ps->b, ' ');
+	printf("ss\n");
 }

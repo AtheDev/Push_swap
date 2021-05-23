@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:57:06 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/17 21:15:41 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 00:02:12 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*filling_stack(char **argv)
 	t_list	*new;
 	int		i;
 
-	i = 1;
+	i = 0;
 	new = NULL;
 	while (argv[i] != NULL)
 	{

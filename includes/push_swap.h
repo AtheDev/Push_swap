@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 19:31:43 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/18 19:31:01 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/23 12:01:38 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,24 @@ void	for_three_int(t_struct *ps, t_arg arg);
 void	add_int(t_struct *ps, t_arg arg);
 void	process_small_sort(t_struct *ps, t_arg arg);
 
+void	put_in_order(t_stack *l, int value, char c);
+void	search_pos_value(int *pos, int value, t_stack *l);
+
+/*
+   ***** PARSING *****
+*/
+int	check_parsing(char ***new, char **argv, int argc, int i);
+int	check_arg(char **tab);
+int	check_duplicate(char **tab);
+int	out_of_bounds(char *str);
+int	is_number(char *str);
+
+/*
+   ***** PARSING UTILS *****
+*/
+char	**free_tab_string(char **tab_string);
+char	*my_strjoin(char *s1, char *s2);
+
 /*
    ***** SORT *****
 */
@@ -93,9 +111,9 @@ void	process_sort(t_struct *ps, t_arg arg, int div);
 /*
    ***** PROCESS PUSH *****
 */
-int	before_push_b(int value, t_stack *b);
-void	process_push_stack_b(t_pos *pos, t_struct *ps);
-void	push_max_in_stack_b(int max, t_struct *ps);
+int	before_push_b(int value, t_stack *b, int res);
+void	process_push_stack_b(t_pos *pos, t_struct *ps, int res);
+void	push_stack_up(int value, t_stack *l, char c);
 
 /*
    ***** CHUNCK *****
@@ -109,6 +127,7 @@ void	sort_with_chunck(int min, int max, t_struct *ps, int nb_int_chunck);
 */
 int	search_value_just_below(int *value_beside, int *pos, int value, t_stack *b);
 int	search_value_just_above(int *value_beside, int *pos, int value, t_stack *b);
+void	save_value(int *value_beside, int *pos, int num, int count);
 
 /*
    ***** POSITION *****
@@ -132,6 +151,7 @@ void	print_lst(t_list *lst);
 void	print_tab_int(int *tab, int size);
 void	print_pos(t_pos pos);
 void	print_struct(t_stack *a, t_stack *b);
+void	print_new_tab_arg(char **tab);
 
 /*
    ***** SWAP *****
