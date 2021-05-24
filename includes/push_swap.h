@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 19:31:43 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 16:04:56 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/24 11:04:28 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int			is_number(char *str);
 */
 char		**free_tab_string(char **tab_string);
 char		*my_strjoin(char *s1, char *s2, int i, int j);
+int			process_split(char ***new, char *str);
 
 /*
    ***** SORT *****

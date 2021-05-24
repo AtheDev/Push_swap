@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 18:14:35 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 15:44:26 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/24 11:10:48 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 	{
 		arg = init_arg(new_tab, 0);
 		ps = init_struct_ps(new_tab, size_tab(new_tab));
-		choice_process(ps, arg);
+		if (check_order(&ps->a) != 0)
+			choice_process(ps, arg);
 		clear_struct(ps);
 	}
 	else

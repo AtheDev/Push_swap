@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 21:41:06 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/24 09:32:22 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/24 11:03:44 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,7 @@ int	check_parsing(char ***new, char **argv, int argc, int i)
 	str = NULL;
 	if (argc == 2)
 	{
-		*new = ft_split(argv[1], ' ');
-		if (*new == NULL)
+		if (process_split(new, argv[1]) != 0)
 			return (1);
 	}
 	else if (argc > 2)
@@ -102,8 +101,7 @@ int	check_parsing(char ***new, char **argv, int argc, int i)
 				return (1);
 		}
 		*new = ft_split(str, ' ');
-		if (str != NULL)
-			free(str);
+		free(str);
 		if (*new == NULL)
 			return (1);
 	}
