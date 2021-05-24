@@ -6,7 +6,7 @@
 /*   By: adupuy <adupuy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 21:41:06 by adupuy            #+#    #+#             */
-/*   Updated: 2021/05/23 15:40:05 by adupuy           ###   ########.fr       */
+/*   Updated: 2021/05/24 09:32:22 by adupuy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ int	check_parsing(char ***new, char **argv, int argc, int i)
 				return (1);
 		}
 		*new = ft_split(str, ' ');
+		if (str != NULL)
+			free(str);
 		if (*new == NULL)
 			return (1);
 	}
